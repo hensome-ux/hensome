@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>520 Confession</title>
+    <style>
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes glitter {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(calc(50px - 100px * var(--x)), calc(50px - 100px * var(--y))) scale(0.5);
+            }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            animation: heartBeat 1s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 115px;
+            background-color: #ff99cc; /* Light Pink */
+            border-radius: 50px 50px 0 0;
+            transform: rotate(50deg);
+            top: 0;
+            left: 50px;
+        }
+
+        .heart:after {
+            left: 0;
+            transform: rotate(-50deg);
+        }
+
+        .glitter-container {
+            position: absolute;
+            width: 100px;
+            height: 90px;
+            top: 0;
+            left: 0;
+        }
+
+        .glitter {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffccff; /* Light Pink Glitter */
+            border-radius: 50%;
+            opacity: 0;
+            animation: glitter 1s infinite;
+        }
+
+        .text {
+            position: absolute;
+            top: 52%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* More glitter particles around the heart */
+        .glitter:nth-child(1) { --x: 0.2; --y: 0.8; animation-delay: 0s; }
+        .glitter:nth-child(2) { --x: 0.7; --y: 0.3; animation-delay: 0.1s; }
+        .glitter:nth-child(3) { --x: 0.5; --y: 1; animation-delay: 0.2s; }
+        .glitter:nth-child(4) { --x: 1; --y: 0.5; animation-delay: 0.3s; }
+        .glitter:nth-child(5) { --x: 0.3; --y: 0.1; animation-delay: 0.4s; }
+        .glitter:nth-child(6) { --x: 0.8; --y: 0.7; animation-delay: 0.5s; }
+        .glitter:nth-child(7) { --x: 0.1; --y: 0.9; animation-delay: 0.6s; }
+        .glitter:nth-child(8) { --x: 0.9; --y: 0.1; animation-delay: 0.7s; }
+        .glitter:nth-child(9) { --x: 0.4; --y: 0.6; animation-delay: 0.8s; }
+        .glitter:nth-child(10) { --x: 0.6; --y: 0.4; animation-delay: 0.9s; }
+    </style>
+</head>
+<body>
+    <div class="heart">
+        <div class="glitter-container">
+            <!-- More glitter particles around the heart -->
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+        </div>
+    </div>
+    <div class="text"> Love You</div>
+</body>
+</html>
